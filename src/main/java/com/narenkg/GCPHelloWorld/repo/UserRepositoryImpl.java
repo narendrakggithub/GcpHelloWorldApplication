@@ -4,6 +4,7 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.narenkg.GCPHelloWorld.exception.ResourceNotFoundException;
 import com.narenkg.GCPHelloWorld.model.User;
 
 import java.sql.ResultSet;
