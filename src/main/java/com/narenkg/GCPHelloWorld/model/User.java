@@ -1,53 +1,47 @@
 package com.narenkg.GCPHelloWorld.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.UniqueConstraint;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-@Entity
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@Table(uniqueConstraints = { @UniqueConstraint(columnNames = "username"),
-		@UniqueConstraint(columnNames = "email"), @UniqueConstraint(columnNames = "phone") })
-
-public class User   {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class User {
 	private Long id;
-
-	@NotBlank
-	@Size(max = 50)
-	private String username;
-
-	@Size(max = 50)
-	@Email
+	private String firstName;
+	private String lastName;
 	private String email;
 
-	@NotBlank
-	@Size(max = 15)
-	private String phone;
-
-	@NotBlank
-	@Size(max = 120)
-	private String password;
-
-	private Boolean isVerified;
-
-	public User(String username, String password) {
-		this.username = username;
-		this.password = password;
+	public User(Long id, String firstName, String lastName, String email) {
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
 	}
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 }
