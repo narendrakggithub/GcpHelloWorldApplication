@@ -1,0 +1,20 @@
+Commands on Google VM Instance
+
+sudo apt-get update
+sudo apt install default-jdk
+java --version
+sudo apt install openjdk-17-jdk
+java --version
+sudo apt install maven
+sudo apt install git
+git clone https://github.com/narendrakggithub/GcpHelloWorldApplication.git
+cd GcpHelloWorldApplication/
+mvn install
+nohup java -jar GCPHelloWorld-0.0.1-SNAPSHOT.jar
+ps -ef | grep java
+kill 7188
+java -jar spring-boot-gcp-sql-mysql-crud-0.0.1-SNAPSHOT.jar
+java -jar spring-boot-gcp-sql-mysql-crud-0.0.1-SNAPSHOT.jar
+java -jar target/GCPHelloWorld-0.1.jar
+
+http://34.29.213.129:8080/narenkg/hello
